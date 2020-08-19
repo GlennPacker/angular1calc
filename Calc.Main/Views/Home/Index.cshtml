@@ -1,0 +1,67 @@
+﻿<html ng-app="calc">
+
+<head>
+    <title>Calc</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/lib")
+    @Scripts.Render("~/bundles/app")
+</head>
+
+<body ng-controller="calc as calc">
+    <div class="calculator">
+        <div class="screen">
+            {{ calc.currentValue }}
+        </div>
+
+        <div class="calc-number-buttons">
+            <button ng-click="calc.clearScreen()">C</button>
+            <button 
+                ng-click="calc.buttonClick('/')"
+                ng-disabled="calc.furtherCalculationDisable()"
+            >
+                /
+            </button>
+            <button 
+                ng-click="calc.buttonClick('*')"
+                ng-disabled="calc.furtherCalculationDisable()"
+            >
+                *
+            </button>
+
+            <button ng-click="calc.buttonClick(7)">7</button>
+            <button ng-click="calc.buttonClick(8)">8</button>
+            <button ng-click="calc.buttonClick(9)">9</button>
+
+            <button ng-click="calc.buttonClick(4)">4</button>
+            <button ng-click="calc.buttonClick(5)">5</button>
+            <button ng-click="calc.buttonClick(6)">6</button>
+
+            <button ng-click="calc.buttonClick(1)">1</button>
+            <button ng-click="calc.buttonClick(2)">2</button>
+            <button ng-click="calc.buttonClick(3)">3</button>
+        </div>
+
+        <div class="plus-equals">
+            <button 
+                ng-click="calc.buttonClick('-')"
+                ng-disabled="calc.furtherCalculationDisable()"
+            >
+                -
+            </button>
+            <button 
+                ng-click="calc.buttonClick('+')"
+                ng-disabled="calc.furtherCalculationDisable()"
+            >
+                +
+            </button>
+            <button ng-click="calc.runCalculation()">=</button>
+        </div>
+
+        <div class="zero-decimal">
+            <button ng-click="calc.buttonClick(0)">0</button>
+            <button ng-click="calc.buttonClick('.')">.</button>
+        </div>
+    </div>
+</body>
+
+</html>
