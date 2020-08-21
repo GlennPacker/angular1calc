@@ -34,6 +34,7 @@
     padding: 2em;
     border-radius: 5px;
     margin: 2em;
+    font-size: 14px;
 }
 
 .calculator button, .screen {
@@ -57,3 +58,17 @@
 .calc-number-buttons div, .plus-equals div, .zero-decimal div {
     background-color: antiquewhite;
 }
+
+@media only screen and (max-width: 768px) {
+    body {
+        margin: 0;
+    }
+
+    .calculator {
+        grid-gap: 5px;
+        font-size: 8px;
+        padding: 1em;
+        margin: 1px;
+    }
+}
+
